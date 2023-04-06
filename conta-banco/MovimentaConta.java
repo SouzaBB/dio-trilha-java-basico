@@ -40,7 +40,7 @@ public class MovimentaConta {
           
           } else if (saque > saldo + limite) {
             limiteEstourado = saque - (saldo + limite);
-            System.out.println("Você estourou seu limite em R$" + limiteEstourado);
+            System.out.println("Saque não permitido, você estourou seu limite em R$" + limiteEstourado);
           }
         break;
 
@@ -61,8 +61,8 @@ public class MovimentaConta {
         break;
         }
       } scan.close();  
-    } catch ( InputMismatchException e) {
-      System.err.println("\n >>>> Erro: Valor de saque deve ser inteiro <<<<< \n");
+    } catch ( InputMismatchException e ) {
+      System.err.println("\n >>>>> Erro: Valor de saque deve ser inteiro <<<<< \n");
     }  
   }
 }        
