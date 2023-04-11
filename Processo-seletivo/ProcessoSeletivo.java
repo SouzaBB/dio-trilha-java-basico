@@ -4,15 +4,17 @@ import java.util.concurrent.ThreadLocalRandom;
 public class ProcessoSeletivo {
   public static void main(String[] args) {
     String [] candidatos = {"Felipe", "Marcia", "Julia", "Paulo", "Augusto"};
+    
     for (String candidato: candidatos) {
       entrandoEmContato(candidato);
     }
   }
-  
+
   static void entrandoEmContato(String candidato) {
     int tentativasRealizadas = 1;
     boolean continuarTentando = true;
     boolean atendeu = false;
+    
     do {
       atendeu = atender();
       continuarTentando = !atendeu;
@@ -65,6 +67,7 @@ public class ProcessoSeletivo {
       double salarioPretendido = valorPretendido();
 
       System.out.println("O candidato " + candidato + " Solicitou este valor de salário: " + salarioPretendido);
+      
       if (salarioBase >= salarioPretendido) {
         System.out.println("O candidato " + candidato + " foi selecionado para a vaga");
         candidatosSelecionados++;
@@ -79,14 +82,16 @@ public class ProcessoSeletivo {
 
   static void analisarCandidato(double salarioPretendido) {
     double salarioBase = 2000.0;
+    
     if (salarioBase > salarioPretendido) {
       System.out.println("LIGAR PARA O CANDIDATO");
+    } 
     
-    } else if (salarioBase == salarioPretendido)
+    else if (salarioBase == salarioPretendido)
       System.out.println("LIGAR PARA O CANDIDATO COM A CONTRAPROPOSTA");
   
-      else {
+    else {
         System.out.println("AGUARDANDO OS RESULTADOS DOS DEMAIS CANDIDATOS");
-      } 
+    } 
   }
 }
