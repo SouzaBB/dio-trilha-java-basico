@@ -8,6 +8,7 @@ public class ProcessoSeletivo {
       entrandoEmContato(candidato);
     }
   }
+  
   static void entrandoEmContato(String candidato) {
     int tentativasRealizadas = 1;
     boolean continuarTentando = true;
